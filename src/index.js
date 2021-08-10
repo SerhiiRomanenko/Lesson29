@@ -41,8 +41,8 @@ const menu = {
     ],
 };
 
-const result = [];
 function order(food, callback) {
+    const result = [];
     console.log(`Ваш заказ получен. Начинаем готовить…`);
     for (const item in food) {
         setTimeout(() => {
