@@ -42,17 +42,17 @@ const menu = {
 };
 
 function order(food, callback) {
-    const result = [];
+    const result = new Array();
     console.log(`Ваш заказ получен. Начинаем готовить…`);
-    for (const item in food) {
+    food.forEach(item => {
         setTimeout(() => {
-            console.log(`${food[item].name} приготовлен(о)`);
-            result.unshift({ value: food[item].name });
+            console.log(`${item.name} приготовлен(о)`);
+            result.unshift({ value: item.name });
             if (result.length === food.length) {
                 callback(result);
             }
-        }, food[item].time);
-    }
+        }, item.time);
+    });
 }
 
 const cb = data => {
